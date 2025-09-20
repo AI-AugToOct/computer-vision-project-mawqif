@@ -1,2 +1,5 @@
 # Ignore PyTorch model weights
 *.pth
+
+# Ignore dataset folder
+Dataset/
