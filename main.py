@@ -126,15 +126,12 @@ This dataset is especially useful because it contains **images with different li
     base_path = r"C:\Users\Lenovo\OneDrive\Desktop\project4_CV\computer-vision-project-mawqif\Dataset\train"  
     annotations_file = os.path.join(base_path, "_annotations.coco.json")
 
-    # تحقق من وجود الملف
     if not os.path.exists(annotations_file):
         raise FileNotFoundError(f"File not found: {annotations_file}")
 
-    # فتح ملف الـ annotations
     with open(annotations_file, 'r', encoding='utf-8') as f:
         coco = json.load(f)
 
-    # ربط image_id باسم الصورة
     img_id_to_filename = {img['id']: img['file_name'] for img in coco['images']}
 
     dataset_dict = {}
@@ -151,7 +148,7 @@ This dataset is especially useful because it contains **images with different li
     # Display Sample Images with Boxes
     # -------------------------
     st.markdown("### Sample Images with Bounding Boxes")
-    sample_images = list(dataset_dict.items())[:5]  # عرض أول 5 صور
+    sample_images = list(dataset_dict.items())[:5]  
 
     for i, (img_name, boxes) in enumerate(sample_images):
         img_path = os.path.join(base_path, img_name) 
@@ -164,7 +161,6 @@ This dataset is especially useful because it contains **images with different li
             st.warning(f"Unable to read image: {img_path}")
             continue
 
-        # رسم البوكس على الصورة
         for box in boxes:
             x, y, w, h = box['bbox']
             cv2.rectangle(img, (int(x), int(y)), (int(x + w), int(y + h)), (0, 255, 0), 2)
@@ -299,13 +295,14 @@ with tab4:
     ### Farah Alhanaya
     - Dataset research and annotation for car detection.
     - Developed the **MobileNet** model for car detection.
-    - Assisted with **Region of Interest (ROI)** implementation to define parking slots along with Sarah.
+    - Assisted with **Region of Interest (ROI)** implementation to define parking slots along with Sarah and Aljwharah.
     - Contributed to designing the **Streamlit interface** with Sarah and Aljwharah.
     - Worked on deployment preparation ().
 
     ### Aljwharah  Almousa
     - Dataset research and annotation for car detection.
     - Developed the **Faster R-CNN** model for car detection.
+    - Assisted with **Region of Interest (ROI)** implementation with Farahand sarah to define parking slots.
     - Contributed to designing the **Streamlit interface** with Farah and Sarah.
 
     ### Rawabi Almutairi
@@ -316,7 +313,7 @@ with tab4:
     ### Sarah Alowjan
     - Dataset research and annotation for car detection.
     - Developed the **RF-DETR** model using Roboflow.
-    - Assisted with **Region of Interest (ROI)** implementation with Farah to define parking slots.
+    - Assisted with **Region of Interest (ROI)** implementation with Farah and Aljwharah to define parking slots.
     - Integrated **violation notifications with WhatsApp** using Twilio to send alerts automatically.
     - Contributed to designing the **Streamlit interface** with Farah and Aljwharah.
     """)
