@@ -294,7 +294,7 @@ with tab4:
   
     ### Farah Alhanaya
     - Dataset research and annotation for car detection.
-    - Developed the **MobileNet** model for car detection.
+    - Developed the **MobileNet** and **R-CNN**model for car detection.
     - Assisted with **Region of Interest (ROI)** implementation to define parking slots along with Sarah and Aljwharah.
     - Contributed to designing the **Streamlit interface** with Sarah and Aljwharah.
     - Worked on deployment preparation ().
