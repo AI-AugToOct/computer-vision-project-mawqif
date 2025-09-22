@@ -25,3 +25,7 @@ Install the required dependencies before running the notebooks:
 
 ```bash
 pip install tensorflow torch torchvision roboflow opencv-python matplotlib seaborn numpy pandas jupyter
+
+## Live Demo
+You can try the deployed application here:
+(https://computer-vision-project-mawqif4git-ohvpofwmwfohyetszerje5.streamlit.app/).
